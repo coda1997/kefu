@@ -25,13 +25,19 @@
                 android:layout_marginLeft="60dp"
                 android:layout_marginRight="60dp"
                 android:layout_marginTop="20dp"
-                android:clipChildren="false" />
+                android:clipChildren="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
 
             <LinearLayout
                 android:id="@+id/tag_host_main_1"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@color/blanchedalmond">
+                android:background="@color/blanchedalmond"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
 
                 <LinearLayout
                     android:id="@+id/tag_main_1_1"

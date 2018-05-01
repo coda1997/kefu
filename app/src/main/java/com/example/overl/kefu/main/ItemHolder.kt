@@ -1,78 +1,54 @@
 package com.example.overl.kefu.main
 
 import android.content.Context
+import android.util.Log
 import android.widget.TextView
-import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
+import com.bumptech.glide.annotation.GlideModule
+import com.example.overl.kefu.GlideApp
 import com.example.overl.kefu.R
+import com.jude.easyrecyclerview.adapter.BaseViewHolder
+import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import org.jetbrains.anko.find
-import org.jetbrains.anko.sdk25.coroutines.onClick
 
 
 /**
  * Created by overl on 2018/5/1.
  */
-open class NormalItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    internal var newsTitle: TextView = itemView.find(R.id.base_swipe_item_title)
-    internal var newsIcon: ImageView = itemView.find(R.id.base_swipe_item_icon)
-    init {
-        itemView.find<LinearLayout>(R.id.base_swipe_item_container).onClick {
-            //onclick item event here
+class NewsAdapter(context: Context?) : RecyclerArrayAdapter<NewsListEntity>(context) {
+    override fun OnCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<*> {
+        return NewsViewHolder(parent)
+    }
+
+
+    inner class NewsViewHolder(viewGroup: ViewGroup?) : BaseViewHolder<NewsListEntity>(viewGroup,R.layout.item_person) {
+        private val tv_title = itemView.find<TextView>(R.id.news_title)
+        private val tv_excerpt = itemView.find<TextView>(R.id.news_excerpt)
+        private val tv_icon = itemView.find<ImageView>(R.id.news_face)
+        override fun setData(data: NewsListEntity?) {
+            tv_title.text = data?.title
+            tv_excerpt.text = data?.excerpt
+            GlideApp.with(context).load(data?.iconUrl).placeholder(R.drawable.text_main1).to(tv_icon)
         }
     }
 }
-
-class GroupItemHolder(itemView: View) :NormalItemHolder(itemView){
-    internal var newsTime :TextView = itemView.find(R.id.base_swipe_group_item_time)
-}
-
-class NewsListAdapter(private val context: Context, private val dataList:List<NewsListEntity>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    companion object {
-        val NORMAL_ITEM = 0
-        val GROUP_ITEM = 1
+class VideoAdapter(context: Context?):RecyclerArrayAdapter<VideoEntity>(context){
+    override fun OnCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<*> {
+        return VideoHloder(parent)
     }
-    private val layoutFlater = LayoutInflater.from(context)
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-        val entity = dataList[position]
-        if (holder is GroupItemHolder){
-            bindGroupItem(entity,holder)
-        }else if (holder is NormalItemHolder){
-            bindNormalItem(entity,holder.newsTitle,holder.newsIcon)
+    inner class VideoHloder(viewGroup: ViewGroup?):BaseViewHolder<VideoEntity>(viewGroup,R.layout.item_video){
+        private val tv_title = itemView.find<TextView>(R.id.video_title)
+        private val iv_cover = itemView.find<ImageView>(R.id.video_cover)
+
+        override fun setData(data: VideoEntity?) {
+            tv_title.text = data?.title
+            GlideApp.with(context).load(data?.cover).placeholder(R.drawable.text_main1).to(iv_cover)
         }
     }
-
-    private fun bindNormalItem(entity: NewsListEntity, newsTitle: TextView, newsIcon: ImageView) {
-        if (entity.iconUrl==""){
-
-            if (newsIcon.visibility!=View.GONE){
-                newsIcon.visibility=View.GONE
-            }
-        }else{
-        }
-
-    }
-
-    private fun bindGroupItem(entity: NewsListEntity, holder: GroupItemHolder) {
-
-
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType== NORMAL_ITEM){
-            NormalItemHolder(layoutFlater.inflate(R.layout.fragment_base_swipe_item,parent,false))
-        }else{
-            GroupItemHolder(layoutFlater.inflate(R.layout.fragment_base_swipe_group_item,parent,false))
-        }
-
-    }
-
-    override fun getItemCount(): Int =dataList.size
 
 }
+data class VideoEntity(val videoId:Int,val title:String="",val cover:String="",val src:String="#")
 
-data class NewsListEntity (val newID:Int,val title:String,val iconUrl:String="",val publishDate:String,val recommendAmount:Int=0,
-                           val commentAmount:Int=0)
+data class NewsListEntity(val newID: Int, val title: String, val iconUrl: String = "", val publishDate: String, val excerpt: String = "")
