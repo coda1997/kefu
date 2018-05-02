@@ -89,16 +89,20 @@
                 android:scaleType="matrix"
                 android:src="@drawable/line"
                 android:contentDescription="line" />
-
-            <com.example.overl.kefu.ViewPagerForScrollView
-                android:id="@+id/main_viewpager"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:flipInterval="30"
-                android:persistentDrawingCache="animation"
-                android:visibility="visible">
+                android:layout_height="match_parent">
+                <com.example.overl.kefu.views.ViewPagerForScrollView
+                    android:id="@+id/main_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:flipInterval="30"
+                    android:persistentDrawingCache="animation"
+                    android:visibility="visible">
 
-            </com.example.overl.kefu.ViewPagerForScrollView>
+                </com.example.overl.kefu.views.ViewPagerForScrollView>
+
+            </RelativeLayout>
         </LinearLayout>
 
 

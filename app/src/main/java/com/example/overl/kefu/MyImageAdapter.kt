@@ -1,4 +1,4 @@
-package com.example.overl.kefu.main
+package com.example.overl.kefu
 
 import android.database.DataSetObserver
 import android.support.v4.view.PagerAdapter
@@ -10,7 +10,7 @@ import android.widget.ImageView
 /**
  * Created by overl on 2018/4/30.
  */
-class AdapterMain1() : PagerAdapter() {
+class MyImageAdapter() : PagerAdapter() {
     private lateinit var mItems:List<View>
     override fun isViewFromObject(view: View?, `object`: Any?): Boolean {
         return view==`object`

@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    >
+    android:orientation="vertical"
+    android:clipChildren="false"
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is a fragment 3"
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:orientation="vertical"
+
+            >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/rv_main_top_image"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:clipChildren="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
+
+            <LinearLayout
+                android:id="@+id/tag_host_main_1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/blanchedalmond"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
+                <LinearLayout
+                    android:id="@+id/tag_main_3_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kefu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tag_main_3_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/kefu" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_cursor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                android:src="@drawable/line"
+                android:contentDescription="line" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.example.overl.kefu.views.ViewPagerForScrollView
+                    android:id="@+id/main_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:flipInterval="30"
+                    android:persistentDrawingCache="animation"
+                    android:visibility="visible">
+
+                </com.example.overl.kefu.views.ViewPagerForScrollView>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
 
 </LinearLayout>

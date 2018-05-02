@@ -3,11 +3,13 @@ package com.example.overl.kefu
 import android.app.Fragment
 import android.app.FragmentManager
 import android.os.Bundle
-import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import android.widget.LinearLayout
+import com.example.overl.kefu.community.Fragment3
 import com.example.overl.kefu.main.Fragment1
+import com.example.overl.kefu.mine.Fragment4
+import com.example.overl.kefu.news.Fragment2
 
 import org.jetbrains.anko.find
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -15,9 +17,9 @@ import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
     val fragment1: Fragment1 by lazy { Fragment1() }
-    val fragment2:Fragment2 by lazy { Fragment2() }
-    val fragment3:Fragment3 by lazy { Fragment3() }
-    val fragment4:Fragment4 by lazy { Fragment4() }
+    val fragment2: Fragment2 by lazy { Fragment2() }
+    val fragment3: Fragment3 by lazy { Fragment3() }
+    val fragment4: Fragment4 by lazy { Fragment4() }
     val fgs = mutableListOf<Fragment>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

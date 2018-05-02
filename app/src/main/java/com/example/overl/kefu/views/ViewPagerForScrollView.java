@@ -1,4 +1,4 @@
-package com.example.overl.kefu;
+package com.example.overl.kefu.views;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -20,7 +20,7 @@ public class ViewPagerForScrollView extends ViewPager {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-        int height = 0;
+        int height = 100;
         for (int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             child.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
