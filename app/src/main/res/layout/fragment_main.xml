@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:clipChildren="false"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,23 +21,21 @@
                 android:id="@+id/rv_main_top_image"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginBottom="9dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="9dp"
                 android:clipChildren="false"
                 android:focusable="true"
-                android:focusableInTouchMode="true"
-                />
+                android:focusableInTouchMode="true" />
 
             <LinearLayout
                 android:id="@+id/tag_host_main_1"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:background="@color/blanchedalmond"
+                android:background="@color/white"
                 android:focusable="true"
-                android:focusableInTouchMode="true"
-                >
+                android:focusableInTouchMode="true">
 
                 <LinearLayout
                     android:id="@+id/tag_main_1_1"
@@ -48,10 +46,20 @@
 
                     >
 
+                    <ImageView
+                        android:id="@+id/tag_main_1_1_im"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="40dp"
+                        android:src="@drawable/menu_ic_nor_1" />
+
                     <TextView
+                        android:id="@+id/tag_main_1_1_tv"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/kefu" />
+                        android:layout_marginLeft="4dp"
+                        android:text="推荐" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -61,10 +69,19 @@
                     android:layout_weight="1"
                     android:gravity="center">
 
+                    <ImageView
+                        android:id="@+id/tag_main_1_2_im"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/menu_ic_nor_2" />
+
                     <TextView
+                        android:id="@+id/tag_main_1_2_tv"
+
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/kefu" />
+                        android:layout_marginLeft="4dp"
+                        android:text="科普" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -74,10 +91,19 @@
                     android:layout_weight="1"
                     android:gravity="center">
 
+                    <ImageView
+                        android:id="@+id/tag_main_1_3_im"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/menu_ic_nor_3" />
+
                     <TextView
+                        android:id="@+id/tag_main_1_3_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/kefu" />
+                        android:layout_marginRight="40dp"
+                        android:text="学院" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -86,12 +112,16 @@
                 android:id="@+id/img_cursor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:contentDescription="line"
                 android:scaleType="matrix"
-                android:src="@drawable/line"
-                android:contentDescription="line" />
+                android:src="@drawable/rectangle" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <com.example.overl.kefu.views.ViewPagerForScrollView
                     android:id="@+id/main_viewpager"
                     android:layout_width="match_parent"
@@ -107,7 +137,6 @@
 
 
     </ScrollView>
-
 
 
 </LinearLayout>

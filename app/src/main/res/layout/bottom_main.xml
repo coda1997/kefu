@@ -1,47 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="50dp"
+    android:elevation="4dp"
+    >
 
     <LinearLayout
+        android:id="@+id/button_1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/yellow"
+        android:background="@color/white"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:id="@+id/button_1"
-        >
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/button_1_im"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/tab_ic_nor_1" />
 
         <TextView
+            android:id="@+id/button_1_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/buttom_1" />
+            android:text="@string/buttom_1"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/button_2"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/aqua"
+        android:background="@color/white"
         android:gravity="center"
-        android:id="@+id/button_2"
 
-        android:orientation="horizontal">
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/button_2_im"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/tab_ic_nor_2"
+            />
 
         <TextView
+            android:id="@+id/button_2_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/black"
             android:text="@string/buttom_2" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/button_scan"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/coral"
         android:gravity="center"
-        android:id="@+id/button_scan"
 
         android:orientation="horizontal">
 
@@ -52,34 +74,54 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/button_3"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/white"
         android:gravity="center"
-        android:id="@+id/button_3"
 
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/button_3_im"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/tab_ic_nor_4"
+            />
         <TextView
+            android:id="@+id/button_3_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/black"
             android:text="@string/buttom_4" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/button_4"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/darkgray"
+        android:background="@color/white"
         android:gravity="center"
-        android:id="@+id/button_4"
 
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/button_4_im"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/tab_ic_nor_5"
+            />
         <TextView
+            android:id="@+id/button_4_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/black"
             android:text="@string/buttom_5" />
     </LinearLayout>
 
