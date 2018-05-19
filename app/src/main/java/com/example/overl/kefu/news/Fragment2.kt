@@ -60,7 +60,6 @@ class Fragment2 : Fragment(),ViewPager.OnPageChangeListener {
             },2000)
         }
         val rv = view?.find<EasyRecyclerView>(R.id.recyclerView_main_1)
-        toast(rv.toString())
         rv?.isNestedScrollingEnabled = false
         val linearLayoutManager = LinearLayoutManager(context)
         rv?.setLayoutManager(linearLayoutManager)
