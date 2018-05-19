@@ -31,48 +31,72 @@
                 />
 
             <LinearLayout
+                android:elevation="2dp"
                 android:id="@+id/tag_host_main_1"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@color/blanchedalmond"
+                android:layout_height="35dp"
+                android:background="@color/white"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 >
                 <LinearLayout
+
                     android:id="@+id/tag_main_3_1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical|right">
+                    <ImageView
+                        android:id="@+id/img_tab_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/com_menu_ic_nor_1"
+                        android:layout_marginRight="15dp"
+                        />
 
                     <TextView
+                        android:id="@+id/tv_tab_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/kefu" />
+                        android:text="咨询"
+                        android:layout_marginRight="20dp"
+                        />
                 </LinearLayout>
+                <ImageView
 
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/com_di"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    />
                 <LinearLayout
                     android:id="@+id/tag_main_3_2"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center">
-
+                    android:gravity="center_vertical|left">
+                    <ImageView
+                        android:id="@+id/img_tab_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@drawable/com_menu_ic_nor_2"/>
                     <TextView
+                        android:id="@+id/tv_tab_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/kefu" />
+                        android:layout_marginLeft="15dp"
+                        android:text="问答" />
                 </LinearLayout>
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_cursor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="matrix"
-                android:src="@drawable/line"
-                android:contentDescription="line" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

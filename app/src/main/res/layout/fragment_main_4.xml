@@ -4,75 +4,63 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        >
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/dog1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="xxx" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/kefu" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="edit profile" />
-    </LinearLayout>
+    <include layout="@layout/my_head" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:background="@drawable/corners_bg"
+            android:elevation="2dp"
+
+            android:gravity="center"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/dog1"
-                />
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/menu_ic_1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的收藏" />
+                android:layout_marginLeft="13dp"
+                android:text="我的收藏"
+
+                />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/corners_bg"
+            android:elevation="2dp"
+
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/dog1"
-                />
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:src="@drawable/menu_ic_2" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的收藏" />
-
+                android:layout_marginLeft="13dp"
+                android:text="我的钱包" />
         </LinearLayout>
 
     </LinearLayout>
@@ -80,72 +68,109 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="1dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/corners_bg"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
+
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="54dp"
+                android:src="@drawable/menu_ic_3" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xxxxxxx" />
+                android:layout_marginLeft="13dp"
+                android:text="已购项目" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/corners_bg"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="54dp"
+                android:src="@drawable/menu_ic_4" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xxxxxxx" />
+                android:layout_marginLeft="13dp"
+                android:text="历史纪录" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/corners_bg"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="54dp"
+                android:src="@drawable/list_ic_5" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xxxxxxx" />
+                android:layout_marginLeft="13dp"
+                android:text="意见反馈" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/corners_bg"
+            android:elevation="2dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_launcher_foreground" />
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_marginLeft="54dp"
+                android:src="@drawable/menu_ic_6" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="xxxxxxx" />
+                android:layout_marginLeft="13dp"
+                android:text="个人设置" />
         </LinearLayout>
-
 
     </LinearLayout>
 

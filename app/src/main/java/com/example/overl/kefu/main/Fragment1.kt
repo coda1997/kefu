@@ -124,9 +124,9 @@ class Fragment1 : Fragment(), ViewPager.OnPageChangeListener {
         rv?.isNestedScrollingEnabled = false//???
         val layoutManager = LinearLayoutManager(context)
         rv?.setLayoutManager(layoutManager)
-        val itemDecoration = DividerDecoration(Color.GRAY, Util.dip2px(context, 16f), Util.dip2px(context, 72f), 0)
-        itemDecoration.setDrawLastItem(false)
-        rv?.addItemDecoration(itemDecoration)
+//        val itemDecoration = DividerDecoration(Color.GRAY, Util.dip2px(context, 3f), Util.dip2px(context, 72f), 0)
+//        itemDecoration.setDrawLastItem(false)
+//        rv?.addItemDecoration(itemDecoration)
         val list = mutableListOf<NewsListEntity>()
         (0..10).forEach {
             list.add(NewsListEntity(it, "kefu", excerpt = "hello world", publishDate = ""))

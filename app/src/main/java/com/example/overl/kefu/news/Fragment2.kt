@@ -65,9 +65,9 @@ class Fragment2 : Fragment(),ViewPager.OnPageChangeListener {
         val linearLayoutManager = LinearLayoutManager(context)
         rv?.setLayoutManager(linearLayoutManager)
 
-        val itemDecoration = DividerDecoration(Color.GRAY, Util.dip2px(context, 16f), Util.dip2px(context, 72f), 0)
-        itemDecoration.setDrawLastItem(false)
-        rv?.addItemDecoration(itemDecoration)
+//        val itemDecoration = DividerDecoration(Color.GRAY, Util.dip2px(context, 3f), Util.dip2px(context, 72f), 0)
+//        itemDecoration.setDrawLastItem(false)
+//        rv?.addItemDecoration(itemDecoration)
         val list = mutableListOf<NewsListEntity>()
         (0..5).forEach {
             list.add(NewsListEntity(it, "kefu", excerpt = "hello world", publishDate = ""))

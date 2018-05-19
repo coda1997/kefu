@@ -12,6 +12,7 @@ import com.example.overl.kefu.community.Fragment3
 import com.example.overl.kefu.main.Fragment1
 import com.example.overl.kefu.mine.Fragment4
 import com.example.overl.kefu.news.Fragment2
+import com.example.overl.kefu.scan.ScanActivity
 
 import org.jetbrains.anko.find
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -48,12 +49,15 @@ class MainActivity : AppCompatActivity() {
         }
         find<LinearLayout>(R.id.button_2).onClick {
             fragmentManager.selectFragment(fragment2, fgs)
+            changeButtonAndImage(2)
         }
         find<LinearLayout>(R.id.button_3).onClick {
             fragmentManager.selectFragment(fragment3, fgs)
+            changeButtonAndImage(3)
         }
         find<LinearLayout>(R.id.button_4).onClick {
             fragmentManager.selectFragment(fragment4, fgs)
+            changeButtonAndImage(4)
         }
         find<LinearLayout>(R.id.button_scan).onClick {
             startActivity<ScanActivity>()
@@ -69,11 +73,46 @@ class MainActivity : AppCompatActivity() {
     val text2: TextView by lazy { find<TextView>(R.id.button_2_tv) }
     val text3: TextView by lazy { find<TextView>(R.id.button_3_tv) }
     val text4: TextView by lazy { find<TextView>(R.id.button_4_tv) }
+    var preFragment:Int = 4
     private fun changeButtonAndImage(index: Int) {
+        changeButtonBack(preFragment)
         when (index) {
             1 -> {
                 image1.setImageResource(R.drawable.nav_ic_sel)
                 text1.setTextColor(resources.getColor(R.color.green))
+            }
+            2 ->{
+                image2.setImageResource(R.drawable.tab_ic_sel_2)
+                text2.setTextColor(resources.getColor(R.color.green))
+            }
+            3->{
+                image3.setImageResource(R.drawable.tab_ic_sel_3)
+                text3.setTextColor(resources.getColor(R.color.green))
+            }
+            4->{
+                image4.setImageResource(R.drawable.me)
+                text3.setTextColor(resources.getColor(R.color.green))
+            }
+        }
+        preFragment=index
+    }
+    private fun changeButtonBack(index: Int){
+        when(index){
+            1 -> {
+                image1.setImageResource(R.drawable.tab_ic_nor_1)
+                text1.setTextColor(resources.getColor(R.color.black))
+            }
+            2 ->{
+                image2.setImageResource(R.drawable.tab_ic_nor_2)
+                text2.setTextColor(resources.getColor(R.color.black))
+            }
+            3 -> {
+                image3.setImageResource(R.drawable.tab_ic_nor_4)
+                text3.setTextColor(resources.getColor(R.color.black))
+            }
+            4 ->{
+                image4.setImageResource(R.drawable.tab_ic_nor_5)
+                text4.setTextColor(resources.getColor(R.color.black))
             }
         }
     }

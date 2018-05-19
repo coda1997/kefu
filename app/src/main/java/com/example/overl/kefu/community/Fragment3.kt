@@ -17,6 +17,7 @@ import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.overl.kefu.MyImageAdapter
 import com.example.overl.kefu.R
 import com.example.overl.kefu.main.*
@@ -31,10 +32,6 @@ import org.jetbrains.anko.sdk25.coroutines.onClick
  * Created by overl on 2018/4/30.
  */
 class Fragment3 : Fragment(), ViewPager.OnPageChangeListener {
-    private var offset = 0
-    private var currIndex = 0
-    private var bmpWidth = 0
-    private var one = 0
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -51,30 +48,44 @@ class Fragment3 : Fragment(), ViewPager.OnPageChangeListener {
 
     private fun initMainViewPagerAndTagHost(view: View) {
         val vp = view.find<ViewPagerForScrollView>(R.id.main_viewpager)
-        bmpWidth = BitmapFactory.decodeResource(resources, R.drawable.line).width
-        val dsm = DisplayMetrics()
-        activity.windowManager.defaultDisplay.getMetrics(dsm)
-        val screenW = dsm.widthPixels
-        offset = (screenW / 2 - bmpWidth) / 2
-        val matrix = Matrix()
-        matrix.postTranslate(offset.toFloat(),0f)
-        view.find<ImageView>(R.id.img_cursor).imageMatrix = matrix
-        one = offset*2+bmpWidth
+
         val list = mutableListOf<View>()
         //module
         list.add(layoutInflater.inflate(R.layout.view_main_1,null,false).apply { initComView1(this) })
         list.add(layoutInflater.inflate(R.layout.view_main_1,null,false).apply { initComView1(this) })
         vp.adapter = AdapterMain2(list)
-        vp.currentItem = 0
+        vp.currentItem = 0;changeTab(1,view)
         view.find<LinearLayout>(R.id.tag_main_3_1).onClick {
+
             vp.currentItem = 0
+            changeTab(1,view)
         }
         view.find<LinearLayout>(R.id.tag_main_3_2).onClick {
+
             vp.currentItem = 1
+            changeTab(2,view)
         }
         vp.addOnPageChangeListener(this)
 
     }
+    private fun changeTab(index:Int,view: View){
+        when(index){
+            1->{
+                view.find<ImageView>(R.id.img_tab_1).setImageResource(R.drawable.com_menu_ic_sel_1)
+                view.find<TextView>(R.id.tv_tab_1).setTextColor(resources.getColor(R.color.green))
+                view.find<ImageView>(R.id.img_tab_2).setImageResource(R.drawable.com_menu_ic_nor_2)
+                view.find<TextView>(R.id.tv_tab_2).setTextColor(resources.getColor(R.color.gray))
+            }
+            2->{
+                view.find<ImageView>(R.id.img_tab_2).setImageResource(R.drawable.com_menu_ic_sel_2)
+                view.find<TextView>(R.id.tv_tab_2).setTextColor(resources.getColor(R.color.green))
+                view.find<ImageView>(R.id.img_tab_1).setImageResource(R.drawable.com_menu_ic_nor_1)
+                view.find<TextView>(R.id.tv_tab_1).setTextColor(resources.getColor(R.color.gray))
+            }
+        }
+    }
+
+
     private val handle = Handler()
 
     private fun initComView1(view: View?) {
@@ -88,9 +99,9 @@ class Fragment3 : Fragment(), ViewPager.OnPageChangeListener {
         rv?.isNestedScrollingEnabled=false//???
         val layoutManager = LinearLayoutManager(context)
         rv?.setLayoutManager(layoutManager)
-        val itemDecoration = DividerDecoration(Color.GRAY, Util.dip2px(context,16f), Util.dip2px(context,72f),0)
-        itemDecoration.setDrawLastItem(false)
-        rv?.addItemDecoration(itemDecoration)
+//        val itemDecoration = DividerDecoration(Color.GRAY, Util.dip2px(context,3f), Util.dip2px(context,72f),0)
+//        itemDecoration.setDrawLastItem(false)
+//        rv?.addItemDecoration(itemDecoration)
         val list = mutableListOf<NewsListEntity>()
         (0 ..10).forEach {
             list.add(NewsListEntity(it,"kefu",excerpt = "hello world",publishDate = ""))
@@ -129,18 +140,7 @@ class Fragment3 : Fragment(), ViewPager.OnPageChangeListener {
     }
 
     override fun onPageSelected(position: Int) {
-        val animation: Animation = when (position) {
-            0 -> {
-                TranslateAnimation(one.toFloat(), 0f, 0f, 0f)
-            }
-            else -> {
-                TranslateAnimation(offset.toFloat(), one.toFloat(), 0f, 0f)
-            }
-        }
-        currIndex = position
-        animation.fillAfter = true
-        animation.duration = 300
-        view.find<ImageView>(R.id.img_cursor).startAnimation(animation)
+
     }
 
 }
