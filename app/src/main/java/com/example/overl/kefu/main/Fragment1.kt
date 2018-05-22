@@ -22,12 +22,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.overl.kefu.MyImageAdapter
 import com.example.overl.kefu.R
+import com.example.overl.kefu.views.ArticleActivity
 import com.example.overl.kefu.views.ViewPagerForScrollView
 import com.jude.easyrecyclerview.EasyRecyclerView
 import com.jude.easyrecyclerview.decoration.DividerDecoration
 import com.jude.rollviewpager.Util
 import org.jetbrains.anko.find
 import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.startActivity
 
 /**
  * Created by overl on 2018/4/30.
@@ -98,7 +100,7 @@ class Fragment1 : Fragment(), ViewPager.OnPageChangeListener {
     }
 
     private fun initMainView3(view: View?) {
-        val adapter = VideoAdapter(context)
+        val adapter = VideoAdapter(activity)
         val rv = view?.find<EasyRecyclerView>(R.id.recyclerView_main_3)
         rv?.isNestedScrollingEnabled = false
 
@@ -114,11 +116,15 @@ class Fragment1 : Fragment(), ViewPager.OnPageChangeListener {
 
     private val handle = Handler()
     private fun initMainView1(view: View?) {
-        val adapter = NewsAdapter(context)
+        val adapter = NewsAdapter(activity)
         adapter.setMore(R.layout.view_more) {
             handle.postDelayed({
                 Log.d("load", "more")
             }, 2000)
+        }
+        adapter.setOnItemClickListener {
+            Log.d("click","$it")
+            activity.startActivity<ArticleActivity>()
         }
         val rv = view?.find<EasyRecyclerView>(R.id.recyclerView_main_1)
         rv?.isNestedScrollingEnabled = false//???

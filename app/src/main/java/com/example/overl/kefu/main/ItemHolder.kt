@@ -1,5 +1,6 @@
 package com.example.overl.kefu.main
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.widget.TextView
@@ -9,9 +10,12 @@ import android.widget.ImageView
 import com.bumptech.glide.annotation.GlideModule
 import com.example.overl.kefu.GlideApp
 import com.example.overl.kefu.R
+import com.example.overl.kefu.views.ArticleActivity
 import com.jude.easyrecyclerview.adapter.BaseViewHolder
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter
 import org.jetbrains.anko.find
+import org.jetbrains.anko.sdk25.coroutines.onClick
+import org.jetbrains.anko.startActivity
 
 
 /**
@@ -22,8 +26,11 @@ class NewsAdapter(context: Context?) : RecyclerArrayAdapter<NewsListEntity>(cont
         return NewsViewHolder(parent)
     }
 
+    init {
+        this.context = context
+    }
 
-    inner class NewsViewHolder(viewGroup: ViewGroup?) : BaseViewHolder<NewsListEntity>(viewGroup,R.layout.item_person) {
+    inner class NewsViewHolder(viewGroup: ViewGroup?) : BaseViewHolder<NewsListEntity>(viewGroup, R.layout.item_person) {
         private val tv_title = itemView.find<TextView>(R.id.news_title)
         private val tv_excerpt = itemView.find<TextView>(R.id.news_excerpt)
         private val tv_icon = itemView.find<ImageView>(R.id.news_face)
@@ -34,11 +41,13 @@ class NewsAdapter(context: Context?) : RecyclerArrayAdapter<NewsListEntity>(cont
         }
     }
 }
-class VideoAdapter(context: Context?):RecyclerArrayAdapter<VideoEntity>(context){
+
+class VideoAdapter(context: Context?) : RecyclerArrayAdapter<VideoEntity>(context) {
     override fun OnCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<*> {
         return VideoHloder(parent)
     }
-    inner class VideoHloder(viewGroup: ViewGroup?):BaseViewHolder<VideoEntity>(viewGroup,R.layout.item_video){
+
+    inner class VideoHloder(viewGroup: ViewGroup?) : BaseViewHolder<VideoEntity>(viewGroup, R.layout.item_video) {
         private val tv_title = itemView.find<TextView>(R.id.video_title)
         private val iv_cover = itemView.find<ImageView>(R.id.video_cover)
 
@@ -49,6 +58,7 @@ class VideoAdapter(context: Context?):RecyclerArrayAdapter<VideoEntity>(context)
     }
 
 }
-data class VideoEntity(val videoId:Int,val title:String="",val cover:String="",val src:String="#")
+
+data class VideoEntity(val videoId: Int, val title: String = "", val cover: String = "", val src: String = "#")
 
 data class NewsListEntity(val newID: Int, val title: String, val iconUrl: String = "", val publishDate: String, val excerpt: String = "")

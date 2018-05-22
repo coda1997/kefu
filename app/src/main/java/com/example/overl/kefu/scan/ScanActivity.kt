@@ -19,14 +19,7 @@ class ScanActivity: Activity() {
     }
 
     private fun initView() {
-        linearLayout {
-            textView {
-                text="Scan activity"
-            }
-            button(text = "back to main").onClick {
-                finish()
-            }
-        }
+
 
     }
 }
